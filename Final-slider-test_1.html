@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Layout</title>
+  <style>
+    body {
+      font-family: pp mori;
+	  font-weight: lighter;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .block-container {
+      display: flex; 
+    }
+    .block {
+      box-sizing: border-box;
+      border: none; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .block-1 {
+      width: 320px;
+      height: 358px;
+      margin-left: 38px;
+    }
+    .video-animation {
+      width: 200px;
+      height: 200px;
+      background-color: #f0f0f0; 
+      margin: 40px 0px 0px 40px;
+    }
+    .block-1-text {
+	  font-weight: normal;
+      font-size: 18px;
+      margin-top: 16px;
+      margin-left: 40px;
+	  position: relative;
+    line-height: 24px;
+    }
+	  .block-1-text span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      opacity: 0;
+    }
+	  .block-1-text span:nth-child(3) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .block-1-subtext {
+      font-size: 18px;
+      margin-top: 8px;
+      margin-left: 40px;
+	    position: relative;
+    }
+	    .block-1-subtext span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+	      .block-1-subtext span:nth-child(3) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .block-2 {
+      width: 674px;
+      height: 358px;
+    }
+    .block-2-line1 {
+		font-family: pp cirka;
+      font-size: 56px;
+      line-height: 56px;
+      margin-top: 40px;
+      margin-left: 40px;
+	  position: relative;
+    }
+	
+	.block-2-line1 span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      opacity: 0;
+    }
+	  	.block-2-line1 span:nth-child(3) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      opacity: 0;
+    }
+	
+	
+    .block-2-line2 {
+	  margin-right: 50px;
+      font-size: 18px;
+      margin-top: 24px;
+      margin-left: 40px;
+	  margin-bottom: 16px;
+		line-height: 24px;
+      position: relative;
+    }
+	   .block-2-line2 span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+	   .block-2-line2 span:nth-child(3) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+	  
+	
+	  
+ .block-2-line3 {
+  font-size: 18px;
+  margin-top: 24px;
+  display: inline; 
+  position: relative;
+  margin-left: 40px;
+  text-decoration: none;
+  color: #000000;
+  overflow: hidden; 
+  outline: none;
+}
+
+
+.block-2-line3::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid #ccc;
+}
+
+
+.block-2-line3::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%; 
+  right: 50%; 
+  border-bottom: 2px solid #000000;
+  transition: all 0.3s ease-in-out;
+}
+
+.block-2-line3:hover::after {
+  left: 0; 
+  right: 0; 
+}
+.block-2-line3.no-underline::before,
+.block-2-line3.no-underline::after {
+    display: none;
+}
+
+		  .block-2-line1 span, 
+	.block-2-line2 span,
+	  .block-3-text span,
+	  .block-1-text span,
+	  .block-1-subtext span {
+      transition: all .5s ease-in-out;
+    }
+    
+    .block-3 {
+      width: 404px;
+      height: 358px;
+    }
+    .block-3-text {
+      font-size: 18px;
+      margin-top:  40px;
+      margin-left: 40px;
+	  position: relative;
+    }
+	   .block-3-text span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+	     .block-3-text span:nth-child(3) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .loading-bar {
+      width: 300px;
+      height: 1px;
+      background-color: #D7EEFF; 
+      margin-top: 16px;
+      margin-left: 40px;
+      position: relative;
+    }
+    .loading-progress { 
+      height: 1px;
+      background-color: #000000; 
+    }
+    .block-3-button-container {
+      margin-top: 32px;
+      margin-left: 40px;
+      display: flex; 
+    }
+    .block-3-button {
+      font-size: 18px;
+      background-color: #D7EEFF; 
+      border-radius: 400px; 
+      margin-right: 16px; 
+      display: block;
+      text-align: center;
+      width: 138px; 
+      height: 48px; 
+      line-height: 48px; 
+      text-decoration: none; 
+      color: #000000; 
+    }
+    .block-3-button:last-child {
+	  background-color: white;
+	   box-shadow: inset 0 0 0 2px #E5E5E5;
+      width: 163px; 
+    }
+    .vertical-line {
+      width: 2px;
+      height: 365px;
+      background-color: #ccc; 
+      
+    }
+	  .loading-progress {
+  width: 33.33%; 
+  height: 1px;
+  background-color: #000000; 
+  transition: width 0.5s ease-in-out; 
+}
+	  .block-3-button-container span {
+		  margin-right: 8px;
+		  margin-left: 8px;
+	  }
+
+    .image-group {
+        width: 1436px;
+        height: 360px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        gap: 2px;
+        flex-direction: row-reverse;
+        position: absolute;
+        transition: transform 600ms ease;
+    }
+
+    .image-groups {
+        width: 1436px;
+        height: 360px;
+        position: relative;
+        
+    }
+
+    .image {
+       width: 100%;
+       height: 100%;
+    }
+
+    .small-image:hover ~ .big-image {
+    width: 358px;
+    height: 180px;
+   
+}
+
+.small-image:nth-child(1):hover {
+width: 716px;
+height: 360px;
+background-color: aquamarine;
+} 
+
+.small-image:nth-child(2):hover {
+width: 716px;
+height: 360px;
+background-color: aquamarine;
+} 
+
+.big-image {
+width: 678px;
+height: 360px;
+background-color: aquamarine;
+transition: 800ms cubic-bezier(.2,.76,.35,.87)
+}
+
+.small-image {
+width: 358px;
+height: 180px;
+background-color: antiquewhite;
+transition: 800ms cubic-bezier(.2,.76,.35,.87)
+}
+
+.image-group[data-status="unknown"] {
+    transform: scale(0);
+}
+.image-group[data-status="after"] {
+    transform: translateX(-190%) ;
+}
+
+.image-group[data-status="becoming-active"] {
+    transform: translateX(170%) ;
+    transition: none;
+}
+.image-group[data-status="becoming-active-from-before"] {
+    transform: translateX(-170%) ;
+    transition: none;
+    
+}
+.image-group[data-status="becoming-active"] .big-image {
+    width: 358px;
+    height: 180px;
+}
+
+.image-group[data-status="before"] {
+    transform: translateX(190%) ;
+    
+}
+
+a {
+         text-decoration: none;
+         color: inherit; 
+      }
+
+  </style>
+
+<body>
+	<header class="header"></header>
+	<section>
+    <div class="image-swiper"> 
+      <div class="image-groups"> 
+          <div class="image-group" data-index="0" data-status="active"> 
+       
+       <div class="small-image">
+         
+         <img src="img3.png" alt="Image 3" class="image" id="image3">
+       </div>
+      
+       <div class="small-image">
+          <img src="img2.png" alt="Image 2" class="image" id="image2">
+       </div> 
+       <div class="big-image">
+          <img src="img1.png" alt="Image 1" class="image" id="image1">
+       </div>
+      
+          </div>
+      
+         <div class="image-group" data-index="1" data-status="unknown"> 
+       
+          <div class="small-image">
+            
+            <img src="img6.png" alt="Image 6" class="image">
+          </div>
+         
+          <div class="small-image">
+             <img src="img5.png" alt="Image 5" class="image">
+          </div> 
+          <div class="big-image">
+             <img src="img4.png" alt="Image 4" class="image">
+          </div>
+         
+         </div>
+      
+         <div class="image-group" data-index="2" data-status="unknown"> 
+       
+          <div class="small-image">
+            
+            <img src="img9.png" alt="Image 9" class="image">
+          </div>
+         
+          <div class="small-image">
+             <img src="img8.png" alt="Image 8" class="image">
+          </div> 
+          <div class="big-image">
+             <img src="img7.png" alt="Image 7" class="image">
+          </div>
+         
+         </div>
+      
+      </div>
+      </div>
+  <div class="block-container">
+    <div class="block block-1">
+      <div class="video-animation">
+		<video id="myVideo" width="200" height="200" preload="auto" muted>
+    <source src="https://www.dropbox.com/scl/fi/rm6mm9fa8yshblud5ry5o/world_2_30fps.mp4?rlkey=fun93gzpqrqd6u0kpnvjg4xzp&dl=1" type="video/mp4">
+  
+  </video></div>
+      <div class="block-1-text"> 
+		  <span id="first-date">2005 - 2022</span>
+		  <span id="second-date">2012 - 2022</span>
+		  <span id="third-date">2014 - 2017</span>
+		</div>
+      <div class="block-1-subtext">
+		 <span id="first-country">Afrika</span>
+		  <span id="second-country">Sierra Leone, Afrika</span> 
+		  <span id="third-country">Tanzania, Afrika</span> 
+		</div>
+     
+    </div>
+    <div class="vertical-line"></div>
+    <div class="block block-2">
+		<div class="block-2-line1">
+			<span id="first-title">Mijn werk als <br> vrijwilliger in Afrika</span> 
+		<span id="second-title">Mijn eerste week opereren in Sierra Leone</span>
+		<span id="third-title">Het opereren in Tanzania met het team</span>
+		</div>
+		
+      <div class="block-2-line2">
+		  <span id="first-subtitle">Elk jaar reis ik af naar Afrika om hazenlippen en brandwonden te behandelen, vanuit Dokters van de wereld reizen we met een groep Nederlandse chirurgen naar verschillende ziekenhuizen om onze expertise aan te bieden en locale artsen bij te scholen.</span>
+		  <span id="second-subtitle">Tijdens mijn eerste week opereren in Sierra Leone heb ik zes collega’s mogen leren hoe ze contracturen kunnen verhelpen. Een contractuur is een onnatuurlijke stand van gewrichten vanwege de littekens van een brandwond. Het is belangrijk dat de medische professionals hier weer veel hebben kunnen oefenen, zodat ze deze operaties uiteindelijk helemaal zelfstandig kunnen uitvoeren.</span>
+		  <span id="third-subtitle">Ook in Tanzania komen we vanuit Dokters van de Wereld langs om lokale artsen te helpen met het opereren. We laten zien hoe de operaties uitgevoerd worden met als doel dat de medici in Tanzania uiteindelijk zelf alle operaties kunnen uitvoeren.</span>
+		</div>
+		<div id="linkLine" class="block-2-line3"> 
+		<a href="https://doktersvandewereld.org/wat-doen-wij/" target="_blank" rel="noopener" id="first-link">Meer over Dokters van de Wereld</a>
+		<a id="second-link"></a>
+		<a id="third-link"></a>
+		</div>
+    </div>
+    <div class="block block-3">
+		<div class="block-3-text">
+		<span id="first-page">1 van de 3 items</span>
+		<span id="second-page">2 van de 3 items</span>
+			<span id="third-page">3 van de 3 items</span>
+		</div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+      <div class="block-3-button-container">
+        <a href="#" class="block-3-button" id="vorige-button">
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 1L1 7L7 13" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Vorige</span>
+</a>
+<a href="#" class="block-3-button" id="next-button">
+    <span class="tekst-knop">Volgende</span>
+    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L7 7L1 13" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</a>
+      </div>
+    </div>
+	 
+  </div>
+		</section>
+	
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("myVideo");
+    const vorigeButton = document.getElementById("vorige-button");
+    const nextButton = document.getElementById("next-button");
+    const loadingProgress = document.querySelector('.loading-progress');
+    const transitionDuration = 2000; // 2 sec
+    let hasEnteredViewport = false;
+    let currentState = 0;
+	let linkLine = document.getElementById("linkLine");
+  let activeIndex = 0;
+
+const group = document.getElementsByClassName("image-group");
+    function updateContent() {
+		console.log("Updating content for currentState:", currentState);
+		
+        const elements = [
+            ["first-date", "first-title", "first-subtitle", "first-link", "first-page", "first-country"],
+            ["second-date", "second-title", "second-subtitle", "second-link", "second-page", "second-country"],
+            ["third-date", "third-title", "third-subtitle", "third-link", "third-page", "third-country"]
+        ];
+
+        elements.flat().forEach(id => {
+            const elem = document.getElementById(id);
+            if (elem) {
+                elem.style.opacity = "0";
+            }
+        });
+
+        elements[currentState].forEach(id => {
+            const elem = document.getElementById(id);
+            if (elem) {
+                elem.style.opacity = "1";
+            }
+        });
+
+        loadingProgress.style.width = `${(currentState + 1) * 33.3}%`;
+		 
+  const elementToModify = document.querySelector('.block-2-line3');
+
+    if (currentState === 1 || currentState === 2) {
+        elementToModify.classList.add('no-underline');
+    } else {
+        elementToModify.classList.remove('no-underline');
+    }
+}
+
+
+
+    function goForward() {
+    if (currentState < 2) { 
+        vorigeButton.setAttribute("disabled", "disabled");
+        nextButton.setAttribute("disabled", "disabled");
+
+        const targetTime = Math.min(video.currentTime + 2, video.duration);
+        seekToTime(targetTime);
+        currentState++;
+        updateContent();
+    }
+    if (activeIndex < 2) {  
+        const nextindex = activeIndex + 1;
+
+        const currentGroup = document.querySelector(`[data-index="${activeIndex}"]`);
+        const nextGroup = document.querySelector(`[data-index="${nextindex}"]`);
+
+        currentGroup.dataset.status = "after";
+        nextGroup.dataset.status = "becoming-active";
+
+        setTimeout(() => {
+            nextGroup.dataset.status = "active";
+            activeIndex = nextindex;
+        });
+    }
+}
+
+
+    function goBack() {
+        vorigeButton.setAttribute("disabled", "disabled");
+        nextButton.setAttribute("disabled", "disabled");
+
+        if (currentState > 0) {
+            const targetTime = Math.max(video.currentTime - 2, 0);
+            seekToTime(targetTime, true);
+            currentState--;
+            updateContent();
+        }
+        if (activeIndex > 0) {  
+        const previndex = activeIndex - 1;
+
+        const currentGroup = document.querySelector(`[data-index="${activeIndex}"]`);
+        const prevGroup = document.querySelector(`[data-index="${previndex}"]`);
+
+        currentGroup.dataset.status = "before";
+        prevGroup.dataset.status = "becoming-active-from-before";
+
+        setTimeout(() => {
+            prevGroup.dataset.status = "active";
+            activeIndex = previndex;
+        });
+    }
+    }
+
+    function seekToTime(targetTime, isReversing = false) {
+        const initialTime = video.currentTime;
+        const startTime = performance.now();
+
+        function step() {
+            const currentTime = performance.now();
+            const elapsedTime = currentTime - startTime;
+
+            if (elapsedTime < transitionDuration) {
+                const progress = elapsedTime / transitionDuration;
+                video.currentTime = isReversing
+                    ? initialTime - progress * (initialTime - targetTime)
+                    : initialTime + progress * (targetTime - initialTime);
+                requestAnimationFrame(step);
+            } else {
+                video.currentTime = targetTime;
+                updateButtons();
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    function updateButtons() {
+        if (currentState === 0) {
+            vorigeButton.setAttribute("disabled", "disabled");
+            nextButton.removeAttribute("disabled");
+        } else if (currentState === 2) {
+            nextButton.setAttribute("disabled", "disabled");
+            vorigeButton.removeAttribute("disabled");
+        } else {
+            vorigeButton.removeAttribute("disabled");
+            nextButton.removeAttribute("disabled");
+        }
+    }
+
+    function checkViewport() {
+        const rect = video.getBoundingClientRect();
+        const isInViewport = (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+
+        if (!hasEnteredViewport && isInViewport) {
+            hasEnteredViewport = true;
+            video.play();
+            setTimeout(() => {
+                video.pause();
+                updateButtons();
+                updateContent();
+            }, 2000); 
+        }
+    }
+
+    window.addEventListener("scroll", checkViewport);
+    window.addEventListener("resize", checkViewport);
+    vorigeButton.addEventListener("click", goBack);
+    nextButton.addEventListener("click", goForward);
+
+    
+    vorigeButton.setAttribute("disabled", "disabled"); 
+});
+</script>
+
+</body>
+</html>
